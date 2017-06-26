@@ -5,7 +5,7 @@
 # Create the $LFS directory
 # Download all the sources from the given wget-list file
 
-echo -n 'Please enter the location of the LFS installation directory: '
+echo -n 'Please enter the location of the LFS installation directory [default is /mnt/lfs]: '
 read LFS
 
 if [ -z $LFS ]; then
