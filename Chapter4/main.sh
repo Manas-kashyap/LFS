@@ -4,11 +4,9 @@ if [ -z ${LFS}]; then
     export LFS=/mnt/lfs;
 fi
 mkdir -vp $LFS/tools
-ls -sv $LFS/tools / # I am not sure what is happeninghere
+ln -svf $LFS/tools / # I am not sure what is happeninghere
 # Adding the LFS user
-groupadd lfs
-useradd -g lfs -s /bin/bash -m -k /dev/null lfs
-passwd lfs
+id -u lfs &>/dev/null || useradd -G lfs -s /bin/bash -m -k /dev/null -p pass
 # Chainging permissions
 if [ "$(whoami)" == "root" ]; then
         chown -v lfs $LFS/tools
@@ -22,7 +20,4 @@ if [ "$(whoami)" == "root" ]; then
             '
 fi
 
-su - lfs <<!
-pass
-bash ex_as_user_lfs.sh
-!
+su lfs ex_as_user_lfs.sh
