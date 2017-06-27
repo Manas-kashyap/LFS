@@ -15,7 +15,7 @@ if [ "$(whoami)" == "root" ]; then
         sudo sh -c '
             chown -v lfs $LFS/tools
             id
-            chown -v lfs $LFS/tools
+            chown -v lfs $LFS/sources
             id
             '
 fi
