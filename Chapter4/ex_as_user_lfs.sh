@@ -3,7 +3,7 @@
 if [ "$(whoami)" != "lfs" ]; then
     echo ERROR: Script ex_as_user_lfs.sh must be executed as user lfs
     exit -1
-
+fi
 cat > ~/.bash_profile << "EOF"
 exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
 EOF
