@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Check if the $LFS environment variable is set. If not, then set it
 if [ -z ${LFS}]; then
     export LFS=/mnt/lfs;
 fi
@@ -20,6 +20,7 @@ if [ "$(whoami)" == "root" ]; then
             chown -v lfs $LFS/tools
             id
             '
+fi
 
 su - lfs <<!
 pass
