@@ -20,6 +20,7 @@ if [ "$(whoami)" == "root" ]; then
             chown -v lfs $LFS/tools
             id
             '
+fi
 
 su - lfs <<!
 pass
