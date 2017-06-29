@@ -4,7 +4,7 @@ if [ -z ${LFS}]; then
     export LFS=/mnt/lfs;
 fi
 mkdir -vp $LFS/tools
-ln -svf $LFS/tools / # I am not sure what is happeninghere
+ln -svf $LFS/tools / 
 # Adding the LFS user
 id -u lfs &>/dev/null || useradd -G lfs -s /bin/bash -m -k /dev/null -p pass
 # Chainging permissions
